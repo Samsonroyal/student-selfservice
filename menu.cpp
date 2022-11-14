@@ -6,99 +6,99 @@
 #include<cctype>
 #include<iomanip>
 using namespace std;
-class Bank_Account
+class Student_acc
 {
 	
-	int Money_Deposit;
+	int Pay_Tuition;
 	char type;
 	int acno;
 	char name[70];
 public:
 	
 	void report() const;
-	int retMoney_Deposit() const;
-	void create_Bank_Account();
+	int retPay_Tuition() const;
+	void create_Student_acc();
 	void dep(int);
 	int retacno() const;
 	void Display_Account() const;
-	void Updation();
+	void Update();
 	char rettype() const;
 	void draw(int);
 };
  
  
-void Bank_Account::Updation()
+void Student_acc::Update()
 {
-	cout<<"\n\tBank_Account No. : "<<acno;
-	cout<<"\n\tUpdation Bank_Account Holder Name : ";
+	cout<<"\n\tStudent_acc No. : "<<acno;
+	cout<<"\n\tUpdate Student_acc Holder Name : ";
 	cin.ignore();
 	cin.getline(name,50);
-	cout<<"\n\tUpdation Type of Bank_Account : ";
+	cout<<"\n\tUpdate Type of Student_acc : ";
 	cin>>type;
 	type=toupper(type);
-	cout<<"\n\tUpdation Balance Total-Money : ";
-	cin>>Money_Deposit;
+	cout<<"\n\tUpdate Balance Total-Money : ";
+	cin>>Pay_Tuition;
 }
-void Bank_Account::create_Bank_Account()
+void Student_acc::create_Student_acc()
 {
 	system("CLS");
-	cout<<"\n\tPlease Enter the Bank_Account No. : ";
+	cout<<"\n\tPlease Enter the Student_acc Reg No. : ";
 	cin>>acno;
-	cout<<"\n\n\tPlease Enter the Name of the Bank_Account holder : ";
+	cout<<"\n\n\tPlease Enter the Name of the Student_acc holder : ";
 	cin.ignore();
 	cin.getline(name,50);
-	cout<<"\n\tPlease Enter Type of the Bank_Account (C/S) : ";
+	cout<<"\n\tPlease Enter Type of the Student_acc (C/S) : ";
 	cin>>type;
 	type=toupper(type);
 	cout<<"\n\tPlease Enter The Starting Total-Money : ";
-	cin>>Money_Deposit;
-	cout<<"\n\n\tBank_Account Created..";
+	cin>>Pay_Tuition;
+	cout<<"\n\n\tStudent_acc Created..";
 }
  
-void Bank_Account::Display_Account() const
+void Student_acc::Display_Account() const
 {
-	cout<<"\n\tBank_Account No. : "<<acno;
-	cout<<"\n\tBank_Account Holder Name : ";
+	cout<<"\n\tStudent_acc No. : "<<acno;
+	cout<<"\n\tStudent_acc Holder Name : ";
 	cout<<name;
-	cout<<"\n\tType of Bank_Account : "<<type;
-	cout<<"\n\tBalance Total-Money : "<<Money_Deposit;
+	cout<<"\n\tType of Student_acc : "<<type;
+	cout<<"\n\tBalance Total-Money : "<<Pay_Tuition;
 }
-int Bank_Account::retacno() const
+int Student_acc::retacno() const
 {
 	return acno;
 }
  
  
  
-char Bank_Account::rettype() const
+char Student_acc::rettype() const
 {
 	return type;
 }
-void Bank_Account::report() const
+void Student_acc::report() const
 {
-	cout<<acno<<setw(10)<<" "<<name<<setw(10)<<" "<<type<<setw(6)<<Money_Deposit<<endl;
+	cout<<acno<<setw(10)<<" "<<name<<setw(10)<<" "<<type<<setw(6)<<Pay_Tuition<<endl;
 }
-void Bank_Account::dep(int x)
+void Student_acc::dep(int x)
 {
-	Money_Deposit+=x;
+	Pay_Tuition+=x;
 }
-void Bank_Account::draw(int x)
+void Student_acc::draw(int x)
 {
-	Money_Deposit-=x;
+	Pay_Tuition-=x;
 }
-int Bank_Account::retMoney_Deposit() const
+int Student_acc::retPay_Tuition() const
 {
-	return Money_Deposit;
+	return Pay_Tuition;
 }
  
  
-void write_Bank_Account();
+void write_Student_acc();
 void display_sp(int);
 void display_all();
  
-void delete_Bank_Account(int);
-void Money_Deposit_withdraw(int, int);
-void Updation_Bank_Account(int);
+void delete_Student_acc(int);
+void Pay_Tuition_withdraw(int, int);
+void Update_Student_acc(int);
 int main()
 {
 	char ch;
@@ -112,13 +112,13 @@ int main()
 	cout<<"\n\t\t!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
  
 		cout<<"\t\t    ::MAIN MENU::\n";
-		cout<<"\n\t\t1. NEW Bank_Account";
-		cout<<"\n\t\t2. Money_Deposit Total-Money";
+		cout<<"\n\t\t1. NEW Student_acc";
+		cout<<"\n\t\t2. Pay_Tuition Total-Money";
 		cout<<"\n\t\t3. WITHDRAW Total-Money";
 		cout<<"\n\t\t4. BALANCE ENQUIRY";
-		cout<<"\n\t\t5. ALL Bank_Account HOLDER LIST";
-		cout<<"\n\t\t6. CLOSE AN Bank_Account";
-		cout<<"\n\t\t7. Updation AN Bank_Account";
+		cout<<"\n\t\t5. ALL Student_acc HOLDER LIST";
+		cout<<"\n\t\t6. CLOSE AN Student_acc";
+		cout<<"\n\t\t7. Update AN Student_acc";
 		cout<<"\n\t\t8. EXIT";
 		cout<<"\n\n\t\tSelect Your Option (1-8): ";
 		cin>>ch;
@@ -126,21 +126,21 @@ int main()
 		switch(ch)
 		{
 		case '1':
-			write_Bank_Account();
+			write_Student_acc();
 			break;
 		case '2':
 			system("CLS");
-			cout<<"\n\n\tPlease Enter The Bank_Account No. : "; cin>>num;
-			Money_Deposit_withdraw(num, 1);
+			cout<<"\n\n\tPlease Enter The Student_acc No. : "; cin>>num;
+			Pay_Tuition_withdraw(num, 1);
 			break;
 		case '3':
 			system("CLS");
-			cout<<"\n\n\tPlease Enter The Bank_Account No. : "; cin>>num;
-			Money_Deposit_withdraw(num, 2);
+			cout<<"\n\n\tPlease Enter The Student_acc No. : "; cin>>num;
+			Pay_Tuition_withdraw(num, 2);
 			break;
 		case '4':
 			system("CLS");
-			cout<<"\n\n\tPlease Enter The Bank_Account No. : "; cin>>num;
+			cout<<"\n\n\tPlease Enter The Student_acc No. : "; cin>>num;
 			display_sp(num);
 			break;
 		case '5':
@@ -148,13 +148,13 @@ int main()
 			break;
 		case '6':
 			system("CLS");
-			cout<<"\n\n\tPlease Enter The Bank_Account No. : "; cin>>num;
-			delete_Bank_Account(num);
+			cout<<"\n\n\tPlease Enter The Student_acc No. : "; cin>>num;
+			delete_Student_acc(num);
 			break;
 		 case '7':
 		 	system("CLS");
-			cout<<"\n\n\tPlease Enter The Bank_Account No. : "; cin>>num;
-			Updation_Bank_Account(num);
+			cout<<"\n\n\tPlease Enter The Student_acc No. : "; cin>>num;
+			Update_Student_acc(num);
 			break;
 		 case '8':
 		 	system("CLS");
