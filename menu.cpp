@@ -1,5 +1,5 @@
 // C++ program to implement
-// Bank Management System
+// STUDENTS SELF-SERVICE PLATFORM
 
 #include<iostream>
 #include<fstream>
@@ -108,7 +108,7 @@ int main()
 	system("CLS");
 	cout<<"\n\n\t\t!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
 	
-	cout<<"\t\tBANK MANAGEMENT SYSTEM";
+	cout<<"\t\tSTUDENTS SELF-SERVICE PLATFORM";
 	cout<<"\n\t\t!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
  
 		cout<<"\t\t    ::MAIN MENU::\n";
@@ -116,11 +116,8 @@ int main()
 		cout<<"\n\t\t2. Pay_Tuition Total-Money";
 		cout<<"\n\t\t3. WITHDRAW Total-Money";
 		cout<<"\n\t\t4. BALANCE ENQUIRY";
-		cout<<"\n\t\t5. ALL Student_acc HOLDER LIST";
-		cout<<"\n\t\t6. CLOSE AN Student_acc";
-		cout<<"\n\t\t7. Update AN Student_acc";
-		cout<<"\n\t\t8. EXIT";
-		cout<<"\n\n\t\tSelect Your Option (1-8): ";
+		cout<<"\n\t\t5. EXIT";
+		cout<<"\n\n\t\tSelect Your Option (1-5): ";
 		cin>>ch;
  
 		switch(ch)
