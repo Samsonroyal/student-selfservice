@@ -7,10 +7,10 @@ using namespace std;
 
 class Student
 {
-    int year;            // student number
+    int stdno;            // student number
     char name[20];       // student name
     char gender;         // student gender
-    int year;             // year of study(1,2,3,4)
+    int year;            // year of study(1,2,3,4)
     char courseunit[25]; // Course Unit
     float marks;         // marks obtained by student
     float percentage;    // percentage of marks obtained by student
@@ -18,14 +18,14 @@ class Student
 public:
     void getData();
     void showData();
-    int getYear() { return year; }
+    int getStdno() { return stdno; }
 } s;
 
 void Student::getData()
 {
     cout << "\n\nEnter Student Details......\n";
-    cout << "Enter Student No.     : ";
-    cin >> year;                          // input student number
+    cout << "Enter Student Number.     : ";
+    cin >>  stdno;              // input student number
     cout << "Enter Full Name         : "; // input student name
     cin.ignore();
     cin.getline(name, 20); // input student name
@@ -45,7 +45,7 @@ void Student::getData()
 void Student::showData()
 {
     cout << "\n\n.......Student Details......\n";
-    cout << "Student No.     : " << year << endl;         // display student number
+    cout << "Student No.     : " << stdno << endl;         // display student number
     cout << "Full Name         : " << name << endl;       // display student name
     cout << "Gender            : " << gender << endl;     // display student gender
     cout << "Year of Study          : " << year << endl;   // display year of study
@@ -91,7 +91,7 @@ void searchData()
 
     while (fin.read((char *)&s, sizeof(s)))
     {
-        if (n == s.getYear())
+        if (n == s.getStdno())
         {
             cout << "The Details of Student No. " << n << " are shown here:\n"; // display message
             s.showData();
@@ -119,7 +119,7 @@ void deleteData()
 
     while (fin.read((char *)&s, sizeof(s)))
     {
-        if (n == s.getYear())
+        if (n == s.getStdno())
         {
             cout << "The Following Student No. " << n << " has been moved to Trash:\n"; // display message
             s.showData();                                                               // call showData() function to display student details
@@ -165,7 +165,7 @@ void modifyData()
     while (fio.read((char *)&s, sizeof(s)))
     {
         pos = fio.tellg();
-        if (n == s.getYear())
+        if (n == s.getStdno())
         {
             cout << "The Following Student No. " << n << " will be modified with new data:\n";
             s.showData();
