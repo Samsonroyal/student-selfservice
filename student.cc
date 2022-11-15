@@ -39,7 +39,7 @@ void Student::getData()
     cout << "Enter Marks (out of 100): ";
     cin >> marks;                       // input marks obtained by student
     cout << endl;                       // print new line
-    percentage = marks * 10.0 / 100.00; // calculate percentage of marks obtained by student
+    percentage = marks * 100.0; // calculate percentage of marks obtained by student
 }
 
 void Student::showData()
@@ -87,7 +87,6 @@ void searchData()
     fin.open("Students.dat", ios::in | ios::binary); // open file in binary mode for reading
     cout << "Enter Student Number you want to search : ";
     cin >> n; // input student number to search
-    cin >> n; // input student number to search
 
     while (fin.read((char *)&s, sizeof(s)))
     {
@@ -100,8 +99,8 @@ void searchData()
     }
     fin.close();                                                  // close file
     if (flag == 0)                                                // if flag is 0 then student number not found
-        cout << "The Student No. " << n << " not found....\n\n";  // display message
-    cout << "\n\nData Reading from File Successfully Done....\n"; // display message
+        cout << "The Student No. " << n << " was not found....\n\n";  // display message
+    cout << "\n\nStudent information from File was shown succesfully....\n"; // display message
 }
 
 void deleteData()
@@ -169,7 +168,7 @@ void modifyData()
         {
             cout << "The Following Student No. " << n << " will be modified with new data:\n";
             s.showData();
-            cout << "\n\nNow Enter the New Details....\n";
+            cout << "\n\nUpdate the student information....\n";
             s.getData();
             fio.seekg(pos - sizeof(s));
             fio.write((char *)&s, sizeof(s));
@@ -204,9 +203,9 @@ void project()
         switch (ch)
         {
         case 1:
-            addData();
+            addData(); // call addData() function
             break;
-        case 2:
+        case 2: 
             displayData();
             break;
         case 3:
